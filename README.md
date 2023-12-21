@@ -1,4 +1,4 @@
-# 👋 Hi there! I'm [Junaid Ahmed Shaikh]
+# 👋 Hi there! I'm Junaid Ahmed Shaikh
 ## 🚀 About Me
 
 I am a passionate AI/CV Engineer with a background in Medical Imaging and a current focus on AI and Computer Vision applications. Currently pursuing a master's degree in Artificial Intelligence, I'm enthusiastic about leveraging technology to solve complex problems and contribute to the development of innovative solutions.
@@ -19,6 +19,13 @@ I am a passionate AI/CV Engineer with a background in Medical Imaging and a curr
   - Implemented image classification using deep neural networks and convolutional neural networks.
   - Optimized multiclass classification on Kaggle datasets using transfer learning.
   - Deployed machine learning classification models using IBM Cloud service in CV studio.
+  - Applying Data Augmentation methodologies to optimize the model and avoid overfitting.
+  - Training Multiclass Classification model with Pytorch.
+  - Tuning a pre-trained UNet Model for MRI Image Segmentation.
+  - Built and train Regression Model in Python to predict house price
+  - Creation of NLP Synthetic data series and made predictions using statistical models.
+  - Getting predictions on time series synthetic and real data with RNN’s, LSTM and Stacked layers of LSTM’s and CNN
+
 
 - **Medical Image Segmentation using GAN and MSRF-Net**
   - Conducted research on Medical Image Segmentation using Generative Adversarial Networks (GAN) and Multiscale Residual Fusion Network (MSRF-Net).
@@ -39,7 +46,7 @@ I am a passionate AI/CV Engineer with a background in Medical Imaging and a curr
 ## 📄 Research & Publications
 
 1. "Medical Image Segmentation using Generative Adversarial Networks GAN and Multiscale Residual Fusion Network MSRF-Net"
-2. "Detection of Esophageal Anomalies from PET and CT Images with Deep Neural Network" (Ongoing)
+2. "Detection of Esophageal Anomalies from PET and CT Images with Deep Neural Network(In Progress)"
 
 ## 📫 Connect with Me
 
