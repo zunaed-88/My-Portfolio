@@ -1,4 +1,4 @@
-# 👋 Hi there! I'm Junaid Ahmed Shaikh
+# 👋 Hi there! I'm [Junaid Ahmed Shaikh]
 ## 🚀 About Me
 
 I am a passionate AI/CV Engineer with a background in Medical Imaging and a current focus on AI and Computer Vision applications. Currently pursuing a master's degree in Artificial Intelligence, I'm enthusiastic about leveraging technology to solve complex problems and contribute to the development of innovative solutions.
