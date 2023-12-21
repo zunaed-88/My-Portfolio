@@ -44,7 +44,7 @@ I am a passionate AI/CV Engineer with a background in Medical Imaging and a curr
 ## 📫 Connect with Me
 
 - LinkedIn: [My LinkedIn Profile](https://www.linkedin.com/in/junaid-ahmed-shaikh-29974429b/)
-- Twitter: [[My Twitter Profile](https://twitter.com/Junaid_phy105)
+- Twitter: [My Twitter Profile](https://twitter.com/Junaid_phy105)
 
 
 Let's connect and collaborate on exciting AI and CV projects! 🚀
