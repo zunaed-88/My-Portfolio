@@ -15,7 +15,6 @@ I am a passionate AI/CV Engineer with a background in Medical Imaging and a curr
 
 ### Academic Projects
 
-- **Image Classification with DNN’s and CNN using Tensorflow/Keras**
   - Transfer learning with Auto-encoders and t-SNE for Cross-Dataset Generalization for Medical Imaging X-Rays
   - Implemented image classification using deep neural networks and convolutional neural networks.
   - Optimized multiclass classification on Kaggle datasets using transfer learning.
@@ -23,6 +22,7 @@ I am a passionate AI/CV Engineer with a background in Medical Imaging and a curr
   - Applying Data Augmentation methodologies to optimize the model and avoid overfitting.
   - Training Multiclass Classification model with Pytorch.
   - Tuning a pre-trained UNet Model for MRI Image Segmentation.
+  - Image Classification with DNN’s and CNN using Tensorflow/Keras
   - Built and train Regression Model in Python to predict house price
   - Creation of NLP Synthetic data series and made predictions using statistical models.
   - Getting predictions on time series synthetic and real data with RNN’s, LSTM and Stacked layers of LSTM’s and CNN
