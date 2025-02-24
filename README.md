@@ -16,6 +16,7 @@ I am a passionate AI/CV Engineer with a background in Medical Imaging and a curr
 ### Academic Projects
 
 - **Image Classification with DNN’s and CNN using Tensorflow/Keras**
+  - Transfer learning with Auto-encoders and t-SNE for Cross-Dataset Generalization for Medical Imaging X-Rays
   - Implemented image classification using deep neural networks and convolutional neural networks.
   - Optimized multiclass classification on Kaggle datasets using transfer learning.
   - Deployed machine learning classification models using IBM Cloud service in CV studio.
@@ -41,7 +42,7 @@ I am a passionate AI/CV Engineer with a background in Medical Imaging and a curr
 
 ## 📄 Research & Publications
 
-1. "Development of Generative AI based Image Translation Method for PET Data Corrections(Thesis In Progress)"
+1. "Development of Generative AI based Image Translation Method for PET Data Corrections(Publication in Progress)"
 
 ## 📫 Connect with Me
 
