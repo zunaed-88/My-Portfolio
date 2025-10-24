@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junaid Ahmed Shaikh-Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #12f7fff9;
+            --secondary: #7b5fb4c6;
+            --dark: #0a0424;
+            --darker: #11082c;
+            --light: #e0e0e0;
+            --gray: #2a2a2a;
+            --card-bg: #102a44f8;
+            --transition: all 0.3s ease;
+        }
+        * {
+            margin: 150;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: clip;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header Styles */
+        header {
+            position: sticky;
+            top: 0;
+            left: 1000;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(5, 1, 66, 0.95);
+            backdrop-filter: blur(100px);
+            padding: 15px 0;
+            box-shadow: 0 2px 20px rgba(30, 1, 128, 0.636);
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin-left: 30px;
+        }
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--light);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 10% 20%, rgba(0, 217, 255, 0.1) 0%, rgba(18, 18, 18, 0) 30%),
+                        radial-gradient(circle at 90% 80%, rgba(117, 55, 108, 0.164) 0%, rgba(18, 18, 18, 0) 30%);
+            z-index: -1;
+        }
+        .hero-content {
+            max-width: 800px;
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--light);
+            animation: fadeInUp 1s ease;
+        }
+        .hero h1 span {
+            color: var(--primary);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #b0b0b0;
+            animation: fadeInUp 1s ease 0.2s;
+            animation-fill-mode: both;
+        }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            animation: fadeInUp 1s ease 0.4s;
+            animation-fill-mode: both;
+        }
+        .btn {
+            display: block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--dark);
+        }
+        .btn-primary:hover {
+            background-color: #12f7fff9;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 217, 255, 0.3);
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: var(--dark);
+        }
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: var(--darker);
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+        .section-title .subtitle {
+            color: var(--primary);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+        }
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .about-text {
+            flex: 1;
+        }
+        .about-text p {
+            margin-bottom: 20px;
+            color: #b0b0b0;
+        }
+        .about-image {
+            flex: 1;
+            position: relative;
+            max-width: 300px;
+            overflow: hidden; 
+        }
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--primary);
+            border-radius: 10px;
+            z-index: -1;
+        }
+        /* Skills Section */
+        .skills {
+            padding: 100px 0;
+        }
+
+        .skills-container {
+            /* Change from flex to block or grid for categories */
+            display: block;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .skills-category {
+            margin-bottom: 40px;
+        }
+
+        .skills-category h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .skills-category .skill-item {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 12px 18px;
+            margin: 5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--light);
+            border: 1px solid transparent;
+            cursor: default;
+            transition: var(--transition);
+            user-select: none;
+        }
+
+        .skills-category .skill-item:hover {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1) 0%, rgba(255, 46, 99, 0.1) 100%);
+            color: #fff;
+            border-color: var(--primary);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .skills-category .skill-item i {
+            font-size: 1.5rem;
+            color: inherit; /* same as text color */
+        }
+
+        /* Responsive tweak: stack categories vertically on small screens */
+        @media (max-width: 768px) {
+            .skills-category .skill-item {
+                width: 100%;
+                display: flex;
+                justify-content: flex-start;
+            }
+}
+
+
+
+        /* Interests Section */
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #02f7ffef;
+            text-decoration: none;
+        }
+
+        .profile-pic {
+            width: 60px;              /* size of the circular image */
+            height: 60px;
+            border-radius: 50%;       /* makes it circular */
+            object-fit: cover;        /* ensures image fits well inside circle */
+            margin-right: 10px;       /* space between image and name */
+            border: 2px solid #ddd;   /* optional: subtle border */
+}
+
+        .interests {
+            padding: 100px 0;
+        }
+        .interests-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .interest-item {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            width: calc(25% - 30px);
+            min-width: 200px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .interest-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1) 0%, rgba(255, 46, 99, 0.1) 100%);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        .interest-item:hover::before {
+            opacity: 1;
+        }
+        .interest-item:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        .interest-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .interest-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--light);
+            position: relative;
+            z-index: 1;
+        }
+        .interest-description {
+            color: #b0b0b0;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+        /* Projects Section */
+        .projects {
+            padding: 100px 0;
+            background-color: var(--darker);
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            position: relative;
+            z-index: 1;
+        }
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1) 0%, rgba(255, 46, 99, 0.1) 100%);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 0;
+        }
+        
+        .project-card:hover::before {
+            opacity: 1;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: var(--transition);
+        }
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+        .project-content {
+            padding: 25px;
+            position: relative;
+            z-index: 2;
+        }
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+        .project-description {
+            color: #b0b0b0;
+            margin-bottom: 20px;
+        }
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .tech-tag {
+            background-color: rgba(0, 217, 255, 0.1);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            z-index: 3;
+        }
+        .project-link:hover {
+            color: var(--primary);
+        }
+        .github-profile {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .github-profile a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--primary);
+            color: var(--dark);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+        .github-profile a:hover {
+            background-color: #00a8cc;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 217, 255, 0.3);
+        }
+        /* CV Section */
+        .cv {
+            padding: 100px 0;
+            background-color: var(--darker);
+        }
+        .cv-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .cv-content p {
+            color: #b0b0b0;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+        .cv-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--primary);
+            color: var(--dark);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+        .cv-download:hover {
+            background-color: #00a8cc;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 217, 255, 0.3);
+        }
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+        }
+        .contact-content {
+            display: flex;
+            gap: 50px;
+        }
+        .contact-info {
+            flex: 1;
+        }
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+        .contact-info p {
+            color: #b0b0b0;
+            margin-bottom: 30px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 217, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        .contact-item h4 {
+            color: var(--light);
+            margin-bottom: 5px;
+        }
+        .contact-item p {
+            color: #b0b0b0;
+            margin: 0;
+        }
+        .contact-form {
+            flex: 1;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            color: var(--light);
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        .btn-submit {
+            background-color: var(--primary);
+            color: var(--dark);
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+        .btn-submit:hover {
+            background-color: #00a8cc;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 217, 255, 0.3);
+        }
+        /* Footer */
+        footer {
+            background-color: var(--darker);
+            padding: 50px 0 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .social-link:hover {
+            background-color: var(--primary);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+        .copyright {
+            color: #b0b0b0;
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 1000;
+        }
+        .back-to-top:hover {
+            background-color: #00a8cc;
+            transform: translateY(-5px);
+        }
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .skill-item {
+                width: calc(50% - 20px);
+            }
+            
+            .interest-item {
+                width: calc(50% - 30px);
+            }
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--darker);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+                transform: translateY(-150%);
+                transition: var(--transition);
+            }
+            .nav-links.active {
+                transform: translateY(0);
+            }
+            .nav-links li {
+                margin: 15px 0;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .skill-item {
+                width: calc(50% - 20px);
+            }
+            
+            .interest-item {
+                width: calc(50% - 30px);
+            }
+        }
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .skill-item {
+                width: 100%;
+            }
+            
+            .interest-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+ <!-- Header -->
+<header>
+    <div class="container">
+        <nav class="navbar">
+            <!-- Logo with circular profile image -->
+            <a href="#home" class="logo">
+                <img src="https://i.imghippo.com/files/Jik2952hME.jpeg" 
+                     alt="Profile Picture" class="profile-pic">
+                Junaid Ahmed Shaikh
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">Profile</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#research" class="nav-link">Research & Publications</a></li>
+                <li><a href="#interests" class="nav-link">Interests</a></li>
+                <li><a href="#cv" class="nav-link">CV</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <!-- UPDATE: Change the text if needed -->
+            <h1>Hi, I'm <span>Junaid Ahmed Shaikh</span></h1>
+            <p>AI/ML Engineer | Imaging Scientist</p>
+            <div class="cta-buttons">
+                <!-- These buttons are already linked to sections -->
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Profile</h2>
+                <div class="subtitle">Who I am</div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <!-- UPDATE: Replace with your personal introduction -->
+                    <p>I am an AI and Machine Learning Engineer passionate about creating intelligent systems that connect data, logic, and human insight. My journey in artificial intelligence has been shaped by curiosity, a drive to understand how learning systems evolve and how technology can transform complexity into clarity. Over time, this curiosity has grown into a purposeful commitment: to design AI solutions that are not only technically robust but also meaningful in their impact.</p>
+                    <p>I approach innovation as both a scientist and a builder, exploring emerging ideas in generative AI, automation, and data-driven intelligence, while grounding them in practical, scalable implementations. My work philosophy centers on the belief that technology should amplify human potential, empowering people to make better decisions, create efficiently, and explore ideas beyond traditional boundaries. I take pride in blending analytical thinking with creativity, ensuring every model, workflow, or algorithm serves a clear purpose.</p>
+                    <p>Looking forward, my goal is to continue shaping AI systems that enhance understanding, inspire innovation, and drive progress across disciplines. Whether developing advanced learning frameworks, mentoring future engineers, or collaborating on transformative projects, I strive to contribute to a future where intelligence,  both human and AI work in harmony to expand what’s possible.</p>
+                <!--/div>
+                <!--<div class="about-image">
+                    <!-- UPDATE: Replace the src attribute with your photo URL -->
+                    <!-- You can upload your photo to an image hosting service and paste the URL here -->
+                    <!--<img src="#" alt="Junaid Ahmed" style="width:300px; height:auto; display:block; max-width:100%;"-->
+
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+    <div class="container">
+        <div class="section-title">
+        <h2>My Skills</h2>
+        <div class="subtitle">Tools for me</div>
+        </div>
+
+        <div class="skills-category">
+        <h3>Programming Languages</h3>
+        <div class="skill-item"><i class="fab fa-python"></i> Python</div>
+        <div class="skill-item"><i class="fas fa-code"></i> MATLAB</div>
+        <div class="skill-item"><i class="fas fa-terminal"></i> Bash Scripting</div>
+        </div>
+
+
+    <div class="skills-category">
+        <h3>AI & Machine Learning Frameworks</h3>
+        <div class="skill-item"><i class="fas fa-brain"></i> TensorFlow</div>
+        <div class="skill-item"><i class="fas fa-layer-group"></i> Keras</div>
+        <div class="skill-item"><i class="fas fa-fire"></i> PyTorch</div>
+        <div class="skill-item"><i class="fas fa-table"></i> Pandas</div>
+        <div class="skill-item"><i class="fas fa-calculator"></i> NumPy</div>
+        <div class="skill-item"><i class="fas fa-cogs"></i> Scikit-Learn</div>
+        <div class="skill-item"><i class="fas fa-image"></i> Scikit-Image</div>
+        <div class="skill-item"><i class="fas fa-eye"></i> OpenCV</div>
+
+    </div>
+
+        <!-- Medical Imaging & Data Science -->
+    <div class="skills-category">
+        <h3><i class="fas fa-x-ray"></i> Medical Imaging & Data Science</h3>
+        <div class="skill-item"><i class="fas fa-file-medical"></i> Image Processing</div>
+        <div class="skill-item"><i class="fas fa-brain"></i> Pydicom</div>
+        <div class="skill-item"><i class="fas fa-microscope"></i> Nibabel</div>
+        <div class="skill-item"><i class="fas fa-database"></i> Data Analytics</div>
+        <div class="skill-item"><i class="fas fa-chart-line"></i> Big Data (Airflow, Splunk)</div>
+    </div>
+
+  <!-- DevOps & Cloud -->
+    <div class="skills-category">
+    <h3><i class="fas fa-cloud"></i> DevOps & Cloud</h3>
+        <div class="skill-item"><i class="fab fa-docker"></i> Docker</div>
+        <div class="skill-item"><i class="fas fa-boxes"></i> Kubernetes</div>
+        <div class="skill-item"><i class="fas fa-network-wired"></i> Terraform</div>
+        <div class="skill-item"><i class="fas fa-code-branch"></i> Vagrant</div>
+        <div class="skill-item"><i class="fab fa-aws"></i> AWS</div>
+        <div class="skill-item"><i class="fab fa-microsoft"></i> Azure</div>
+        <div class="skill-item"><i class="fas fa-server"></i> Jenkins</div>
+        <div class="skill-item"><i class="fas fa-rocket"></i> Ansible</div>
+        <div class="skill-item"><i class="fas fa-stream"></i> CI/CD Pipelines</div>
+    </div>
+
+  <!-- AI Tools & Frameworks -->
+    <div class="skills-category">
+        <h3><i class="fas fa-atom"></i> AI Tools & Frameworks</h3>
+        <div class="skill-item"><i class="fas fa-language"></i> LangChain</div>
+        <div class="skill-item"><i class="fas fa-diagram-project"></i> LangGraph</div>
+        <div class="skill-item"><i class="fab fa-hubspot"></i> Hugging Face</div>
+        <div class="skill-item"><i class="fas fa-code"></i> Flask</div>
+        <div class="skill-item"><i class="fas fa-plug"></i> REST API</div>
+    </div>
+
+  <!-- Version Control & Environment -->
+    <div class="skills-category">
+        <h3><i class="fas fa-laptop-code"></i> Version Control & Environment</h3>
+        <div class="skill-item"><i class="fab fa-git-alt"></i> Git</div>
+        <div class="skill-item"><i class="fab fa-github"></i> GitHub</div>
+        <div class="skill-item"><i class="fab fa-gitlab"></i> GitLab</div>
+        <div class="skill-item"><i class="fab fa-linux"></i> Linux</div>
+    </div>
+
+</section>
+       
+
+    
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Projects</h2>
+                <div class="subtitle">Featured Projects</div>
+            </div>
+            <div class="projects-grid">
+                <!-- UPDATE: Add your projects here -->
+                <!-- Copy the entire project-card div for each project you want to add -->
+                <!-- For each project, update the image, title, description, tech tags, and GitHub link -->
+
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <!-- UPDATE: Replace with your project screenshot URL -->
+                        <img src="https://i.imghippo.com/files/EE3672yA.png" alt="Project 1">
+                    </div>
+                    <div class="project-content">
+                        <!-- UPDATE: Replace with your project title -->
+                        <h3 class="project-title">PET IMAGE TRANSLATION WITH PIX2PIX</h3>
+                        <!-- UPDATE: Replace with your project description -->
+                        <p class="project-description">A GAN-based model for translating PET Non attenuated corrected images to PET CT based attenuated corrected images.This model generates a good quality image with SSIM @ 95 %, PSNR@ 31%, and VIF @91% with low reconstruction errors .</p>
+                        <div class="project-tech">
+                            <!-- UPDATE: Replace with your project technologies -->
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">Nibabel</span>
+                            <span class="tech-tag">TensorBoard</span>
+                            <span class="tech-tag">NumPy</span>
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">Scikit-Learn</span>
+                            <span class="tech-tag">Pydicom</span>
+                        </div>
+                        <div class="project-links">
+                            <!-- UPDATE: Replace with your project GitHub URL -->
+                            <a href="https://github.com/zunaed-88/TRUGAN" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>                
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <!-- UPDATE: Replace with your project screenshot URL -->
+                        <img src="https://i.imghippo.com/files/FEqq6103COQ.png" alt="Project 2">
+                    </div>
+                    <div class="project-content">
+                        <!-- UPDATE: Replace with your project title -->
+                        <h3 class="project-title">Transfer learning with Auto-encoders and t-SNE for Cross-Dataset Generalization</h3>
+                        <!-- UPDATE: Replace with your project description -->
+                        <p class="project-description">This project introduces an autoencoder-based transfer learning approach that enhances deep learning performance in medical imaging.
+By reusing learned feature representations, it improves model accuracy and efficiency across NIH Chest X-Ray Dataset and COVID-19 Radiography Dataset.</p>
+                        <div class="project-tech">
+                            <!-- UPDATE: Replace with your project technologies -->
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Keras</span>
+                            <span class="tech-tag">Auto-encoders</span>
+                            <span class="tech-tag">Scikit-Learn</span>
+                            <span class="tech-tag">Numpy</span>
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">kaggle</span>
+                            <span class="tech-tag">t-SNE</span>
+                            <span class="tech-tag">Transfer Learning</span>
+                        </div>
+                        <div class="project-links">
+                            <!-- UPDATE: Replace with your project GitHub URL -->
+                            <a href="" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>                
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <!-- UPDATE: Replace with your project screenshot URL -->
+                        <img src="https://i.imghippo.com/files/shQ9980YZg.png" alt="Project 3">
+                    </div>
+                    <div class="project-content">
+                        <!-- UPDATE: Replace with your project title -->
+                        <h3 class="project-title">MRI Segmentation for Tumors</h3>
+                        <!-- UPDATE: Replace with your project description -->
+                        <p class="project-description">In this project I built a multi-class model for segmenting an MRI image.This model identify 3 different abnormalities in each image: edemas, non-enhancing tumors, and enhancing tumors</p>
+                        <div class="project-tech">
+                            <!-- UPDATE: Replace with your project technologies -->
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">NumPy</span>
+                            <span class="tech-tag">Keras</span>
+                            <span class="tech-tag">Nibabel</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Git</span>
+                        </div>
+                        <div class="project-links">
+                            <!-- UPDATE: Replace with your project GitHub URL -->
+                            <a href="------" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <!-- UPDATE: Replace with your project screenshot URL -->
+                        <img src="https://i.imghippo.com/files/udl6000JfU.png" alt="Project 4">
+                    </div>
+                    <div class="project-content">
+                        <!-- UPDATE: Replace with your project title -->
+                        <h3 class="project-title">Concrete Crack Detector</h3>
+                        <!-- UPDATE: Replace with your project description -->
+                        <p class="project-description">In this project we trained an AI model that classify concrete crack images using deep learning. In this project I used transfer learning on VGG16 and ResNet50 pre-trained model for on concrete crack data for the detection of cracks.Both models VGG16 and ResNet50 yeilds accuracy of 98.6% and 96.7% respectively  </p>
+                        <div class="project-tech">
+                            <!-- UPDATE: Replace with your project technologies -->
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Keras</span>
+                            <span class="tech-tag">Scikit-Learn</span>
+                            <span class="tech-tag">Numpy</span>
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">Seaborn</span>
+                        </div>
+                        <div class="project-links">
+                            <!-- UPDATE: Replace with your project GitHub URL -->
+                            <a href="https://github.com/adeel-iqbal/flood-probability-prediction-ann" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <!-- UPDATE: Replace with your project screenshot URL -->
+                        <img src="https://i.imghippo.com/files/ztk3751Db.jpg" alt="Project 5">
+                    </div>
+                    <div class="project-content">
+                        <!-- UPDATE: Replace with your project title -->
+                        <h3 class="project-title">Hospital RAG for Retreiving Patient Data</h3>
+                        <!-- UPDATE: Replace with your project description -->
+                        <p class="project-description">In this project, I developed a Retreival Augmented Generation (RAG) system for Imaging department of a hospital to efficiently retrieve and assess patient data. The system utilizes NLP algorithms to analyze patient information, enabling the hospital staff to query relevent patient data effectively.</p>
+                        <div class="project-tech">
+                            <!-- UPDATE: Replace with your project technologies -->
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">LangChain</span>
+                            <span class="tech-tag">OpenAI</span>
+                            <span class="tech-tag">LangGraph</span>
+                            <span class="tech-tag">HuggingFace</span>
+                            <span class="tech-tag">Faiss</span>
+                            <span class="tech-tag">Pinecone</span>
+                            <span class="tech-tag">Llama</span>
+                        </div>
+                        <div class="project-links">
+                            <!-- UPDATE: Replace with your project GitHub URL -->
+                            <a href="https://github.com/zunaed-88/Hospital-RAG" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>                
+                
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <!-- UPDATE: Replace with your project screenshot URL -->
+                        <img src="https://i.imghippo.com/files/QqKb3806Ms.png" alt="Project 6">
+                    </div>
+                    <div class="project-content">
+                        <!-- UPDATE: Replace with your project title -->
+                        <h3 class="project-title">Urdu Alphabet Classifier</h3>
+                        <!-- UPDATE: Replace with your project description -->
+                        <p class="project-description">The classifier is built on a neural network architecture that includes layers for image preprocessing, feature extraction, and classification. The model architecture is designed to effectively capture the patterns and features of Urdu alphabet characters.</p>
+                        <div class="project-tech">
+                            <!-- UPDATE: Replace with your project technologies -->
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Numpy</span>
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Keras</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">Google Colab</span>
+                            <span class="tech-tag">Transfer Learning</span>
+                        </div>
+                        <div class="project-links">
+                            <!-- UPDATE: Replace with your project GitHub URL -->
+                            <a href="https://github.com/zunaed-88/Urdu-Alphabet-Classifier" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Add more projects by copying the entire project-card div above -->
+            </div>
+            <div class="github-profile">
+                <!-- UPDATE: Replace with your GitHub profile URL -->
+                <a href="https://github.com/adeel-iqbal" target="_blank">
+                    <i class="fab fa-github"></i> View More on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interests Section -->
+    <section class="interests" id="interests">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Interests</h2>
+                <div class="subtitle">What I love doing</div>
+            </div>
+            <div class="interests-container">
+                <!-- UPDATE: Add, remove, or modify interests as needed -->
+                <!-- To add a new interest, copy the entire interest-item div and modify the icon, name, and description -->
+                <!-- For icons, visit https://fontawesome.com/icons and replace the class name -->
+                
+                <div class="interest-item">
+                    <div class="interest-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="interest-name">Coding</div>
+                    <div class="interest-description">Building innovative solutions and exploring new technologies</div>
+                </div>
+                
+                <div class="interest-item">
+                    <div class="interest-icon">
+                        <i class="fas fa-chess"></i>
+                    </div>
+                    <div class="interest-name">Business knowledge</div>
+                    <div class="interest-description"></div>
+                </div>
+                
+                <div class="interest-item">
+                    <div class="interest-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="interest-name">Reading</div>
+                    <div class="interest-description">Expanding knowledge through technical and business literature</div>
+                </div>
+                
+                <div class="interest-item">
+                    <div class="interest-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <div class="interest-name">Exercise</div>
+                    <div class="interest-description">Maintaining physical fitness and a healthy lifestyle</div>
+                </div>
+                
+                <div class="interest-item">
+                    <div class="interest-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="interest-name">Research and Exploration</div>
+                    <div class="interest-description"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Section -->
+    <section class="cv" id="cv">
+        <div class="container">
+            <div class="section-title">
+                <h2>My CV</h2>
+                <div class="subtitle">Download my resume</div>
+            </div>
+            <div class="cv-content">
+                <p>Interested in learning more about my professional background, education, and experience? Download my CV to get a comprehensive overview of my qualifications and achievements.</p>
+                <!-- UPDATE: Replace the href attribute with your CV file URL -->
+                <!-- You can upload your CV to a cloud storage service and paste the URL here -->
+                <a href="J_resume25_GSe.pdf" class="cv-download" target="_blank">
+                    <i class="fas fa-download"></i> Download CV
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+                <div class="subtitle">Get in touch</div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's connect</h3>
+                    <p>I'm always interested in hearing about new opportunities and exciting projects. Whether you have a question or just want to say hi, feel free to reach out!</p>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <!-- UPDATE: Replace with your location -->
+                            <p>Karachi, Pakistan</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <!-- UPDATE: Replace with your email -->
+                            <p>junaidahmed.phy@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- UPDATE: Replace with your name if needed -->
+                <div class="logo">Junaid Ahmed Shaikh</div>
+                <div class="social-links">
+                    <!-- UPDATE: Replace with your social media URLs -->
+                    <a href="https://github.com/zunaed-88" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/junaid-ahmed-shaikh-29974429b/" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://x.com/Junaid_phy105" class="social-link" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="copyright">
+                <!-- UPDATE: Replace with your name and current year -->
+                <p>&copy; 2025 Junaid Ahmed. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = this.querySelector('input[type="text"]').value;
+            const email = this.querySelector('input[type="email"]').value;
+            const subject = this.querySelector('input[placeholder="Subject"]').value;
+            const message = this.querySelector('textarea').value;
+            
+            // Here you would typically send the form data to a server
+            // For demonstration, we'll just show an alert
+            alert(`Thank you for your message, ${name}! I'll get back to you soon.`);
+            
+            // Reset form
+            this.reset();
+        });
+        // ✅ Scroll smoothly to top when Back to Top button is clicked
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });        
+
+        // Add animation on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 1s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
